@@ -6,9 +6,7 @@ import Mouth from './Mouth';
 export default function MouthView() {
     return (
         <div className="mouth-view-container">
-            <section>
-                <Mouth/>
-            </section>
+            <Mouth/>
         </div>
       );
 }

@@ -5,7 +5,9 @@ import './styles.scss';
 export default function Asset(props) {
   return (
     <img 
-      src={require(`resources/assets/${props.path}`)}
+      draggable="false"
+      className={`asset ${props.className}`}
+      src={require(`assets/${props.path}`)}
       alt={props.name}>
     </img>
   );

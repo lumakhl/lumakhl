@@ -10,5 +10,5 @@ export default function MouthView() {
                 <p><b>UHUUUUUUUUUUU</b></p>
             </section>
         </div>
-      );
+    );
 }

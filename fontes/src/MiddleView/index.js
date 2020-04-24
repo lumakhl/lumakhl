@@ -10,5 +10,5 @@ export default function MiddleView() {
                 <p><b>UHUUUUUUUUUUU</b></p>
             </section>
         </div>
-      );
+    );
 }

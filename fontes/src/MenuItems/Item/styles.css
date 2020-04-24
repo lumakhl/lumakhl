@@ -1,0 +1,37 @@
+.item-container {
+    width: 95%;
+    height: 100px;
+    margin: 10px auto;
+    background-image: url("./item-background.jpg");
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-image {
+    width: 90px;
+    height: 100%;
+}
+
+.item-content {
+    text-align: left;
+    margin: 0px 5%;
+    width: 100%;
+}
+
+.item-title {
+    font-size: 1.7vw;
+    text-shadow: 0px 0px 4px #000;
+    color: #fff;
+}
+
+.item-price {
+    font-size: 1.2vw;
+    color: #6f6;
+}
+
+.item-quantity {
+    font-size: xx-large;
+    color: #a9a9a9;
+}

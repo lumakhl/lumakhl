@@ -1,0 +1,9 @@
+@import '~variables';
+
+.mouth-view-container {
+    width: 25%;
+    background-color: $mouthViewBackground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

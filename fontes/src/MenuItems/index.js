@@ -1,8 +1,8 @@
 import React from 'react';
 import Item from "./Item";
 
-import mouthwashImage from './mouthwash.png';
-import './styles.css';
+import mouthwashImage from '../assets/mouthwash.png';
+import './styles.scss';
 
 const items = [
     {

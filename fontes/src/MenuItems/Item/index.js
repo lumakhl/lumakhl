@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './styles.scss';
 
-export default function Item({ name, price, image, quantity }) {
+const increasePriceFactor = 10 / 100;
+
+export default function Item(props) {
+
+    const { name, image } = props;
+    const [price, setPrice] = useState(props.price);
+    const [quantity, setQuantity] = useState(props.quantity);
+
+    function buyItem() {
+        setQuantity(quantity + 1);
+        setPrice(price + (price * increasePriceFactor));
+    }
+
     return (
-        <div className="item-container">
-            <img className="item-image" src={image} />
+        <div className="item-container" onClick={buyItem}>
+            <img className="item-image" src={image} alt={name} />
 
             <div className="item-content" >
                 <p className="item-title">{name}</p>
-                <span className="item-price">R$ {price}</span>
+                <span className="item-price">R$ {price.toFixed(2)}</span>
             </div>
 
             <div className="item-quantity">

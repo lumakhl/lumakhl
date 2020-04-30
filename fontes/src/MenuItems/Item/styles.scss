@@ -7,6 +7,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.item-container:hover {
+    width: 96%;
+    height: 105px;
 }
 
 .item-image {

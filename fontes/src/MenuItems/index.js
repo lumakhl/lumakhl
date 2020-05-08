@@ -2,13 +2,17 @@ import React from 'react';
 import Item from "./Item";
 
 import mouthwashImage from '../assets/mouthwash.png';
+import toothbrushImage from '../assets/toothbrush.png';
+import electricToothbrushImage from '../assets/electric-toothbrush.png';
+import toothpasteImage from '../assets/toothpaste.png';
+
 import './styles.scss';
 
 const items = [
     {
         id: 0,
         name: "Escova",
-        image: mouthwashImage,
+        image: toothbrushImage,
         price: 5.99,
         quantity: 20
     },
@@ -22,15 +26,15 @@ const items = [
     {
         id: 2,
         name: "Escova Elétrica",
-        image: mouthwashImage,
+        image: electricToothbrushImage,
         price: 49.99,
         quantity: 20
     },
     {
         id: 3,
-        name: "Enxaguante Bucal",
-        image: mouthwashImage,
-        price: 15.99,
+        name: "Pasta de dente",
+        image: toothpasteImage,
+        price: 2.49,
         quantity: 201
     }
 ];

@@ -6,8 +6,7 @@ export default function MiddleView() {
     return (
         <div className="middle-view-container">
             <section>
-                <p>Middle Component!</p>
-                <p><b>UHUUUUUUUUUUU</b></p>
+                <h2>Inventário</h2>
             </section>
         </div>
     );

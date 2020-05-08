@@ -1,23 +1,32 @@
 .mouth-container {
   position: relative;
-  height: 512px;
-  width: 512px;
+  height: 50%;
+  width: 100%;
   cursor: url(~assets/teeth-brushing_cursor.png), pointer;
 }
 
 .mouth-wrapper {
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   position: absolute;
 }
 
 $toothbrushSpeed: .15s ease 0s;
 .toothbrush-controller {
+  width: 40%;
+  height: 40%;
   position: absolute;
   transition: left $toothbrushSpeed, top $toothbrushSpeed;
 }
 
 .toothbrush {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+.mouth {
+  width: 100%;
+  height: 100%;
 }

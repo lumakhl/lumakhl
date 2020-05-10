@@ -1,1 +1,5 @@
 ## 30/04/2020
+
+Alex - Criação do componente de items e incremento de porcentagem após a compra inicial
+Luma - Procura de animações para o movimento de escovar a boca, auxilios gerais.
+Adriner - Implementação dos códigos de animação para o movimento da boca e ajustes gerais.

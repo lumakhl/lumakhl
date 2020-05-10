@@ -1,1 +1,7 @@
 ## 23/04/2020
+
+Todos - Teste da engine para jogos, que foi desconsiderada depois do GET STARTED por não atender as necessidades
+
+Luma - procura por assests para o projeto;
+Adriner - Criação de novos componentes
+Alex - Estruturação de visual do projeto, criação do cenário principal.

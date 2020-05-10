@@ -1,1 +1,7 @@
 ## 07/05/2020
+
+Todos - testes da aplicação
+
+Alex - continuação na construção dos menus de items e iventário;
+Adriner - Animação para boca e busca por fontes para usar no projeto;
+Luma - Inicio da construção dos estados da aplicação.

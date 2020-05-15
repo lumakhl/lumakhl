@@ -8,9 +8,14 @@
   justify-content: flex-start;
   align-items: center;
   background-color: $themeColor1;
+  box-shadow: 5px 5px 17px -7px rgba(0,0,0,0.75);
+  border: solid 1px $themeColor1_Border;
+  transition: ease-in-out .1s background-color;
   &.clickable {
     &:hover {
       cursor: pointer;
+      background-color: $themeColor1_Hover;
+      border-color: $themeColor1_Hover;
     }
   }
 }

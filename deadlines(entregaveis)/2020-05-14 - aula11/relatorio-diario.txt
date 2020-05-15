@@ -1,1 +1,5 @@
 ## 14/05/2020
+
+Adriner: Atualizando layout e paleta de cores.
+Alex: Iniciando implementação de item indisponível quando não liberado pelo nível do usuário.
+Luma: Implementando mecanismo de estados da aplicação.

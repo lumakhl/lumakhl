@@ -1,6 +1,12 @@
+@import '~variables';
+
 .middle-view-container {
     width: 50%;
-    background-color: bisque;
+    background-color: $themeColor2;
     align-content: center;
     text-align: center;
+}
+
+.inventory-item-wrapper {
+    padding: 10px 20px;
 }

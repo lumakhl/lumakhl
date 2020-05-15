@@ -1,0 +1,13 @@
+.score-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  & h2 {
+    font-weight: bold;
+  }
+  & h4 {
+    font-weight: 600;
+  }
+}

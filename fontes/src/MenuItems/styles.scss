@@ -1,6 +1,12 @@
+@import '~variables';
+
 .menu-items-container {
     width: 25%;
-    background-color: #e1beb3;
+    background-color: $themeColor3;
     text-align: center;
     align-content: center;
+}
+
+.menu-items {
+    padding: 10px 20px 20px 20px;
 }

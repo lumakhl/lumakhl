@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Tile from 'commom/Tile';
+
 import './styles.scss';
 
 export default function InventoryItem(props) {
@@ -7,10 +9,10 @@ export default function InventoryItem(props) {
     const { name, image } = props;
 
     return (
-        <div className="inventory-item-container">
+        <Tile>
             <img className="inventory-item-image" src={image} alt={name} />
             <img className="inventory-item-image" src={image} alt={name} />
             <img className="inventory-item-image" src={image} alt={name} />
-        </div>
+        </Tile>
     );
 }

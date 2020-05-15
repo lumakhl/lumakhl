@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Tile from 'commom/Tile';
+
 import './styles.scss';
 
 const increasePriceFactor = 10 / 100;
@@ -16,7 +18,7 @@ export default function Item(props) {
     }
 
     return (
-        <div className="item-container" onClick={buyItem}>
+        <Tile action={() => buyItem()}>
             <img className="item-image" src={image} alt={name} />
 
             <div className="item-content" >
@@ -27,6 +29,6 @@ export default function Item(props) {
             <div className="item-quantity">
                 {quantity}
             </div>
-        </div>
+        </Tile>
     );
 }

@@ -2,8 +2,9 @@
 
 .mouth-view-container {
     width: 25%;
-    background-color: $mouthViewBackground;
+    background-color: $themeColor5;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

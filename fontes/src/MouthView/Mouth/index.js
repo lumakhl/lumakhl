@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Asset from 'commom/Asset';
-import './styles.scss';
-
 import { toothbrushPositions } from './toothbrush-movement';
+
+import './styles.scss';
 
 export default class Mouth extends React.Component {
 

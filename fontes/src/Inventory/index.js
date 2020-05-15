@@ -35,10 +35,12 @@ export default function Inventory() {
     return (
         <div className="middle-view-container">
             <section>
-                <h2>Inventário</h2>
+                <h2 className="category-title">Inventário</h2>
 
                 {items.map(item => (
-                    <InventoryItem key={item.id} name={item.name} image={item.image} />
+                    <div className="inventory-item-wrapper">
+                        <InventoryItem key={item.id} name={item.name} image={item.image} />
+                    </div>
                 ))}
             </section>
         </div>

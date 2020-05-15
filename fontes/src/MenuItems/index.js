@@ -43,12 +43,13 @@ export default function MenuItems() {
     return (
         <div className="menu-items-container">
             <section>
-                <h2>Loja de itens</h2>
-
-                {items.map(item => (
-                    <Item key={item.id} name={item.name} image={item.image}  
-                        price={item.price} quantity={item.quantity} />
-                ))}
+                <h2 className="category-title">Loja de itens</h2>
+                <div className="menu-items">
+                    {items.map(item => (
+                        <Item key={item.id} name={item.name} image={item.image}  
+                            price={item.price} quantity={item.quantity} />
+                    ))}
+                </div>
             </section>
         </div>
     );

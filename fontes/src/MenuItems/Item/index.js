@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Tile from 'commom/Tile';
 
 import './styles.scss';
+import Asset from 'commom/Asset';
 
 const increasePriceFactor = 10 / 100;
 
@@ -19,9 +20,9 @@ export default function Item(props) {
 
     return (
         <Tile action={() => buyItem()}>
-            <img className="item-image" src={image} alt={name} />
+            <Asset className="item-image" path={image}></Asset>
 
-            <div className="item-content" >
+            <div className="item-content">
                 <p className="item-title">{name}</p>
                 <span className="item-price">R$ {price.toFixed(2)}</span>
             </div>

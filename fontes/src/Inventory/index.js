@@ -38,8 +38,8 @@ export default function Inventory() {
                 <h2 className="category-title">Inventário</h2>
 
                 {items.map(item => (
-                    <div className="inventory-item-wrapper">
-                        <InventoryItem key={item.id} name={item.name} image={item.image} />
+                    <div key={item.id} className="inventory-item-wrapper">
+                        <InventoryItem name={item.name} image={item.image} />
                     </div>
                 ))}
             </section>

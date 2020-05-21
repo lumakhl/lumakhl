@@ -2,10 +2,10 @@ import React from 'react';
 
 import './styles.scss';
 
-import mouthwashImage from '../assets/mouthwash.png';
-import toothbrushImage from '../assets/toothbrush.png';
-import electricToothbrushImage from '../assets/electric-toothbrush.png';
-import toothpasteImage from '../assets/toothpaste.png';
+import mouthwashImage from '../../assets/mouthwash.png';
+import toothbrushImage from '../../assets/toothbrush.png';
+import electricToothbrushImage from '../../assets/electric-toothbrush.png';
+import toothpasteImage from '../../assets/toothpaste.png';
 import InventoryItem from './InventoryItem';
 
 const items = [

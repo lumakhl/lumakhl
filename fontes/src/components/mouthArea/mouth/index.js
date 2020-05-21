@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Asset from 'commom/Asset';
+import Asset from 'commons/Asset';
 import { toothbrushPositions } from './toothbrush-movement';
 
 import './styles.scss';

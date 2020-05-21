@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './styles.scss';
-import Mouth from './Mouth';
-import Score from './Score';
+import Mouth from './mouth';
+import Score from './score';
 
 export default function MouthView() {
     return (

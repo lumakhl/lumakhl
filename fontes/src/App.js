@@ -1,9 +1,9 @@
 import './App.scss';
 
 import React from 'react';
-import MenuItems from './MenuItems';
-import MouthView from './MouthView';
-import Inventory from './Inventory';
+import MenuItems from './components/menu';
+import MouthView from './components/mouth';
+import Inventory from './components/inventory';
 
 function App() {
   return (

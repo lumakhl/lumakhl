@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import Tile from 'commom/Tile';
+import Tile from 'commons/Tile';
 
 import './styles.scss';
-import Asset from 'commom/Asset';
+import Asset from 'commons/Asset';
 
 const increasePriceFactor = 10 / 100;
 

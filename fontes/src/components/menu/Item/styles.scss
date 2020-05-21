@@ -1,3 +1,10 @@
+.menu-item {
+    transition: transform .1 ease-in-out;
+    &:hover {
+        transform: rotate(3deg);
+    }
+}
+
 .item-image {
     width: 90px;
     height: 100%;

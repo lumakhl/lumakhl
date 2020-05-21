@@ -19,7 +19,7 @@ export default function Item(props) {
     }
 
     return (
-        <Tile action={() => buyItem()}>
+        <Tile action={() => buyItem()} customClass={"menu-item"}>
             <Asset className="item-image" path={image}></Asset>
 
             <div className="item-content">

@@ -2,3 +2,10 @@
     font-size: 1.2vw;
     color: rgb(238, 0, 52);
 }
+
+.unavailable-item-image {
+    width: 90px;
+    height: 100%;
+    -webkit-filter: grayscale(100%) brightness(0);
+    filter: grayscale(100%) brightness(0);
+}

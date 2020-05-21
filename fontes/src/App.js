@@ -2,7 +2,7 @@ import './App.scss';
 
 import React from 'react';
 import MenuItems from './components/menu';
-import MouthView from './components/mouth';
+import MouthView from './components/mouthArea';
 import Inventory from './components/inventory';
 
 function App() {

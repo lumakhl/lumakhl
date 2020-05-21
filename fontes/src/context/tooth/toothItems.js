@@ -1,7 +1,7 @@
 export const items = [
     {
         id: 0,
-        name: '',
+        name: 'Escova',
         image: '',
         quantity: 0,
         price: 0.4,
@@ -10,8 +10,8 @@ export const items = [
         visible: true
     },
     {
-        id: 0,
-        name: '',
+        id: 1,
+        name: 'Enxaguante',
         image: '',
         quantity: 0,
         price: 0.4,
@@ -20,8 +20,8 @@ export const items = [
         visible: true
     },
     {
-        id: 0,
-        name: '',
+        id: 2,
+        name: 'Escova Eletrica',
         image: '',
         quantity: 0,
         price: 0.4,
@@ -30,8 +30,8 @@ export const items = [
         visible: true
     },
     {
-        id: 0,
-        name: '',
+        id: 3,
+        name: 'Creme Dental',
         image: '',
         quantity: 0,
         price: 0.4,

@@ -13,18 +13,16 @@ $animationConfig: 15s linear infinite;
         height: 100%;
         width: 100%;
         &:nth-child(1) {
-            // background-color: red;
-            animation: first-el $animationConfig;
+            animation: mouth-background-1 $animationConfig;
         }
         &:nth-child(2) {
-            // background-color: blue;
-            animation: second-el $animationConfig;
+            animation: mouth-background-2 $animationConfig;
         }
     }
 }
 
 $scaleSize: 1.02;
-@keyframes first-el {
+@keyframes mouth-background-1 {
     0% { 
         transform: translateY(-100%) scale(1.00);
     }
@@ -42,7 +40,7 @@ $scaleSize: 1.02;
     }
 }
 
-@keyframes second-el {
+@keyframes mouth-background-2 {
     0% { 
         transform: translateY(0%) scale(1.00);
     }

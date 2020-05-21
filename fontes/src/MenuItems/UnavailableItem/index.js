@@ -4,10 +4,10 @@ import './styles.scss';
 import Asset from 'commom/Asset';
 import Tile from 'commom/Tile';
 
-export default function UnavailableItem({image, price}) {
+export default function UnavailableItem({ image, price }) {
     return (
         <Tile action={() => {}}>
-            <Asset className="item-image" path={"dark-" + image}></Asset>
+            <Asset className="unavailable-item-image" path={image}></Asset>
 
             <div className="item-content">
                 <p className="item-title">?????</p>

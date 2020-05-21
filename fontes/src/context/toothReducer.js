@@ -1,1 +1,0 @@
-// REDUCER DA APLICAÇÃO

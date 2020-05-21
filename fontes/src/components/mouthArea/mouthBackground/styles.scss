@@ -1,0 +1,61 @@
+$animationConfig: 15s linear infinite;
+.mouth-view-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    & > div {
+        position: absolute;
+        background-image: url('../../../assets/back-dente.jpg');
+        height: 100%;
+        width: 100%;
+        &:nth-child(1) {
+            // background-color: red;
+            animation: first-el $animationConfig;
+        }
+        &:nth-child(2) {
+            // background-color: blue;
+            animation: second-el $animationConfig;
+        }
+    }
+}
+
+$scaleSize: 1.02;
+@keyframes first-el {
+    0% { 
+        transform: translateY(-100%) scale(1.00);
+    }
+    25% {
+        transform: translateY(-75%) scale($scaleSize);
+    }
+    50% {
+        transform: translateY(-50%) scale(1.00);
+    }
+    75% {
+        transform: translateY(-25%) scale($scaleSize);
+    }
+    100% { 
+        transform: translateY(0%) scale(1.00);
+    }
+}
+
+@keyframes second-el {
+    0% { 
+        transform: translateY(0%) scale(1.00);
+    }
+    25% {
+        transform: translateY(25%) scale($scaleSize);
+    }
+    50% {
+        transform: translateY(50%) scale(1.00);
+    }
+    75% {
+        transform: translateY(75%) scale($scaleSize);
+    }
+    100% { 
+        transform: translateY(100%) scale(1.00);
+    }
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './styles.scss';
-import Asset from 'commom/Asset';
-import Tile from 'commom/Tile';
+import Asset from 'commons/Asset';
+import Tile from 'commons/Tile';
 
 export default function UnavailableItem({ image, price }) {
     return (

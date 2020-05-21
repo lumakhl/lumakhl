@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tile from 'commom/Tile';
+import Tile from 'commons/Tile';
 
 import './styles.scss';
 

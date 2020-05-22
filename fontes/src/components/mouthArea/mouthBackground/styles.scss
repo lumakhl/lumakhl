@@ -1,3 +1,6 @@
+$childCount: 2;
+$scaleSize: 1.02;
+
 $animationConfig: 15s linear infinite;
 .mouth-view-background {
     position: absolute;
@@ -12,48 +15,32 @@ $animationConfig: 15s linear infinite;
         background-image: url('../../../assets/back-dente.jpg');
         height: 100%;
         width: 100%;
-        &:nth-child(1) {
-            animation: mouth-background-1 $animationConfig;
+        @for $i from 1 through $childCount {
+            &:nth-child(#{$i}) {
+                animation: mouth-background-#{$i} $animationConfig;
+            }
         }
-        &:nth-child(2) {
-            animation: mouth-background-2 $animationConfig;
-        }
+        
     }
 }
 
-$scaleSize: 1.02;
-@keyframes mouth-background-1 {
-    0% { 
-        transform: translateY(-100%) scale(1.00);
-    }
-    25% {
-        transform: translateY(-75%) scale($scaleSize);
-    }
-    50% {
-        transform: translateY(-50%) scale(1.00);
-    }
-    75% {
-        transform: translateY(-25%) scale($scaleSize);
-    }
-    100% { 
-        transform: translateY(0%) scale(1.00);
-    }
-}
-
-@keyframes mouth-background-2 {
-    0% { 
-        transform: translateY(0%) scale(1.00);
-    }
-    25% {
-        transform: translateY(25%) scale($scaleSize);
-    }
-    50% {
-        transform: translateY(50%) scale(1.00);
-    }
-    75% {
-        transform: translateY(75%) scale($scaleSize);
-    }
-    100% { 
-        transform: translateY(100%) scale(1.00);
+@for $i from 1 through $childCount {
+    @keyframes mouth-background-#{$i} {
+        $position: $i - $childCount;
+        0% { 
+            transform: translateY(($position * 100%) + 0%) scale(1.00);
+        }
+        25% {
+            transform: translateY(($position * 100%) + 25%) scale($scaleSize);
+        }
+        50% {
+            transform: translateY(($position * 100%) + 50%) scale(1.00);
+        }
+        75% {
+            transform: translateY(($position * 100%) + 75%) scale($scaleSize);
+        }
+        100% { 
+            transform: translateY(($position * 100%) + 100%) scale(1.00);
+        }
     }
 }

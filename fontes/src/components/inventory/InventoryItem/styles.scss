@@ -14,7 +14,7 @@
     height: 50px;
     @for $i from 1 through 4 {
         &.animation-#{$i} {
-            animation: inventory-item-animation-#{$i} 1s linear infinite, 
+            animation: inventory-item-animation-#{$i} #{2 - (random(10) * 0.1)}s linear infinite, 
                        inventory-item-appearing 1s cubic-bezier(.69,2.05,.38,.46)
         }
     }

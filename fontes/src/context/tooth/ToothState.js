@@ -19,7 +19,42 @@ const ToothState = props => {
         score: {
             clickPerSecond: 0,
             total: 0,
+            currentTotal: 0
         }
+    };
 
-    }
-}
+    const [state, dispatch] = useReducer(ToothReducer, initialState);
+
+    const saveState = () => {
+
+
+    };
+
+    const getState = () => {
+
+    };
+
+    const buyItem = item => {
+
+    };
+
+    const mouthClick = increment => {
+
+    };
+
+    return (<ToothContext.Provider
+        value={{
+            items: state.items,
+            score: state.score,
+            saveState,
+            getState,
+            buyItem,
+            mouthClick
+        }}
+    >
+        {props.children}
+    </ToothContext.Provider>
+    );
+};
+
+export default GithubState

@@ -1,19 +1,24 @@
 import React from 'react';
 
+import Asset from 'commons/Asset';
 import Tile from 'commons/Tile';
 
 import './styles.scss';
 
-export default function InventoryItem(props) {
+export default function InventoryItem({ image, quantity }) {
 
-    const { name, image } = props;
+    let items = [];
+
+    const limite = 10;  // limite temporario para a qtd de itens nao ultrapassar o tamanho da div (:
+    for(let i = 0; i < quantity && i < limite; i++) {
+        items.push(<Asset key={i} className={"inventory-item-image animation-"+((i%4)+1)} path={image}></Asset>);
+    }
+
+    console.log(items.length);
 
     return (
         <Tile>
-            <img className="inventory-item-image animation-1" src={image} alt={name} />
-            <img className="inventory-item-image animation-2" src={image} alt={name} />
-            <img className="inventory-item-image animation-3" src={image} alt={name} />
-            <img className="inventory-item-image animation-4" src={image} alt={name} />
+            { items }
         </Tile>
     );
 }

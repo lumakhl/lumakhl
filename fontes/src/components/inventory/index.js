@@ -2,32 +2,40 @@ import React from 'react';
 
 import './styles.scss';
 
-import mouthwashImage from '../../assets/mouthwash.png';
-import toothbrushImage from '../../assets/toothbrush.png';
-import electricToothbrushImage from '../../assets/electric-toothbrush.png';
-import toothpasteImage from '../../assets/toothpaste.png';
 import InventoryItem from './InventoryItem';
 
 const items = [
     {
         id: 0,
         name: "Escova",
-        image: toothbrushImage
+        image: "toothbrush.png",
+        price: 5.99,
+        quantity: 10,
+        available: true
     },
     {
         id: 1,
         name: "Enxaguante",
-        image: mouthwashImage
+        image: "mouthwash.png",
+        price: 15.99,
+        quantity: 7,
+        available: true
     },
     {
         id: 2,
         name: "Escova Elétrica",
-        image: electricToothbrushImage
+        image: "electric-toothbrush.png",
+        price: 49.99,
+        quantity: 20,
+        available: false
     },
     {
         id: 3,
         name: "Pasta de dente",
-        image: toothpasteImage
+        image: "toothpaste.png",
+        price: 2.49,
+        quantity: 201,
+        available: false
     }
 ];
 
@@ -37,9 +45,9 @@ export default function Inventory() {
             <section>
                 <h2 className="category-title">Inventário</h2>
 
-                {items.map(item => (
+                {items.filter(item => item.available).map(item => (
                     <div key={item.id} className="inventory-item-wrapper">
-                        <InventoryItem name={item.name} image={item.image} />
+                        <InventoryItem name={item.name} image={item.image} quantity={item.quantity}/>
                     </div>
                 ))}
             </section>

@@ -1,1 +1,4 @@
 ## 21/05/2020
+Luma - mudando estrutura do projeto e criação de reducer
+Alex - mudanças nas animações
+Adriner - Animação do projeto e do fundo de dentes

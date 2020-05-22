@@ -7,8 +7,10 @@ export default class MouthBackground extends React.Component {
   render() {
     return (
     <div className="mouth-view-background">
-      <div></div>
-      <div></div>
+      <img></img>
+      <img></img>
+      <img></img>
+      <img></img>
     </div>
     )
   }

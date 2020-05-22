@@ -1,7 +1,7 @@
-$childCount: 2;
+$childCount: 4;
 $scaleSize: 1.02;
 
-$animationConfig: 15s linear infinite;
+$animationConfig: 5s linear infinite;
 .mouth-view-background {
     position: absolute;
     height: 100%;
@@ -10,10 +10,10 @@ $animationConfig: 15s linear infinite;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    & > div {
+    & > img {
         position: absolute;
-        background-image: url('../../../assets/back-dente.jpg');
-        height: 100%;
+        content: url('../../../assets/back-dente.jpg');
+        height: auto;
         width: 100%;
         @for $i from 1 through $childCount {
             &:nth-child(#{$i}) {
@@ -26,7 +26,7 @@ $animationConfig: 15s linear infinite;
 
 @for $i from 1 through $childCount {
     @keyframes mouth-background-#{$i} {
-        $position: $i - $childCount;
+        $position: $i - $childCount + 1;
         0% { 
             transform: translateY(($position * 100%) + 0%) scale(1.00);
         }

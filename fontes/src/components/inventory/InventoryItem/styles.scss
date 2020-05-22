@@ -7,29 +7,49 @@
     justify-content: flex-start;
     align-items: center;
     user-select: none;
-    transition: transform .08s ease-in-out;
-    &:hover {
-        transform: rotate(4deg);
-    }
 }
 
 .inventory-item-image {
-    width: 50px;
-    height: 50px;
-    animation: inventory-item-animation 1s linear infinite;
+    width: 58px;
+    height: 58px;
+    @for $i from 1 through 4 {
+        &.animation-#{$i} {
+            animation: inventory-item-animation-#{$i} 1s linear infinite, 
+                       inventory-item-appearing 1s cubic-bezier(.69,2.05,.38,.46)
+        }
+    }
 }
 
-@keyframes inventory-item-animation {
+@keyframes inventory-item-appearing {
     0% {
-        transform: scale(1.0);
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: scale(1.1);
-        transform: rotate(3deg);
+        transform: scale(0);
     }
     100% {
-        transform: scale(1.0);
-        transform: rotate(0deg);
+        transform: scale(1);
+    }
+}
+
+$inventoryRotationVariation: 3;
+@for $i from 1 through 4 {
+    $rotationDirection: random(2);
+    $degrees: 0;
+    @if $rotationDirection == 1 {
+        $degrees: -2 - random($inventoryRotationVariation);
+    } @else {
+        $degrees: 2 + random($inventoryRotationVariation);
+    }
+    @keyframes inventory-item-animation-#{$i} {
+        0% {
+            transform: scale(1.0);
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: scale(1.1);
+            transform: rotate(#{$degrees}deg);
+        }
+        100% {
+            transform: scale(1.0);
+            transform: rotate(0deg);
+        }
     }
 }

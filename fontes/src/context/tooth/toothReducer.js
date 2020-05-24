@@ -1,27 +1,17 @@
 import {
-    GET_INVENTORY,
-    GET_MENU_ITEMS,
-    GET_CLICKS_MOUTHS,
-    SAVE_STATES,
+    SAVE_STATE,
     BUY_ITEM,
-    MOUTH_CLICK
+    MOUTH_CLICK,
+    GET_STATE
 } from '../types';
 
 export default (state, action) => {
-    switch(action.type) {
-        case GET_INVENTORY:
-            return {
-                ...state,
-            };
-        case GET_MENU_ITEMS:
+    switch (action.type) {
+        case GET_STATE:
             return {
 
             };
-        case GET_CLICKS_MOUTHS:
-            return {
-
-            };
-        case SAVE_STATES:
+        case SAVE_STATE:
             return {
 
             };

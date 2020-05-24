@@ -4,11 +4,11 @@ import ToothReducer from './toothReducer';
 
 import ToothItems from './toothItems';
 
+import {saveStateLocalStorage, getStateFromLocalStorage} from '../../services/service';
+
 import {
-    GET_INVENTORY,
-    GET_MENU_ITEMS,
-    GET_CLICKS_MOUTHS,
-    SAVE_STATES,
+    GET_STATE,
+    SAVE_STATE,
     BUY_ITEM,
     MOUTH_CLICK
 } from '../types';
@@ -20,18 +20,27 @@ const ToothState = props => {
             clickPerSecond: 0,
             total: 0,
             currentTotal: 0
-        }
+        },
+        lastSaveTime: null
     };
 
     const [state, dispatch] = useReducer(ToothReducer, initialState);
 
-    const saveState = () => {
-
-
+    const saveState = (data) => {
+        saveStateLocalStorage(data);
+        
+        dispatch({
+            type: SAVE_STATE,
+            payload: new Date()
+        });
     };
 
     const getState = () => {
-
+        const data = getStateFromLocalStorage();
+        dispatch({
+            type: GET_STATE,
+            payload: data
+        });
     };
 
     const buyItem = item => {
@@ -46,6 +55,7 @@ const ToothState = props => {
         value={{
             items: state.items,
             score: state.score,
+            lastSaveTime: state.lastSaveTime,
             saveState,
             getState,
             buyItem,
@@ -57,4 +67,4 @@ const ToothState = props => {
     );
 };
 
-export default GithubState
+export default ToothState

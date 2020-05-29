@@ -10,7 +10,7 @@ const items = [
         name: "Escova",
         image: "toothbrush.png",
         price: 5.99,
-        quantity: 10,
+        quantity: 20,
         available: true
     },
     {

@@ -53,8 +53,6 @@ export default function MenuItems() {
                             <UnavailableItem key={item.id} image={item.image} price={item.price}/>
                     ))}
                 </div>
-
-                
             </section>
         </div>
     );

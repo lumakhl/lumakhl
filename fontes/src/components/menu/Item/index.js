@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,  useContext } from 'react';
+import ToothContext from  '../../../context/tooth/toothContext';
 
 import Tile from 'commons/Tile';
 
@@ -7,19 +8,15 @@ import Asset from 'commons/Asset';
 
 const increasePriceFactor = 10 / 100;
 
-export default function Item(props) {
+const Item = ({ item })  => {
+    const toothContext = useContext(ToothContext);
 
-    const { name, image } = props;
-    const [price, setPrice] = useState(props.price);
-    const [quantity, setQuantity] = useState(props.quantity);
+    const { name, image, price, quantity } = item;
 
-    function buyItem() {
-        setQuantity(quantity + 1);
-        setPrice(price + (price * increasePriceFactor));
-    }
-
+    console.log(item);
+    
     return (
-        <Tile action={() => buyItem()}>
+        <Tile action={() => toothContext.buyItem(item)}>
             <Asset className="item-image" path={image}></Asset>
 
             <div className="item-content">
@@ -33,3 +30,5 @@ export default function Item(props) {
         </Tile>
     );
 }
+
+export default Item

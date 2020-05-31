@@ -20,8 +20,7 @@ export default function MenuItems() {
                     {items.map(item => (
                         item.visible ? (
                             item.available ?
-                                <Item key={item.id} name={item.name} image={item.image}
-                                    price={item.price} quantity={item.quantity} />
+                                <Item key={item.id} item={item} />
                                 :
                                 <UnavailableItem key={item.id} image={item.image} price={item.price} />) :
                             undefined

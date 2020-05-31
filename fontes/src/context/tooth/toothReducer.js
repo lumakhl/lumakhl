@@ -16,8 +16,15 @@ export default (state, action) => {
 
             };
         case BUY_ITEM:
+            const items = state.items.map((item) => {
+                if (item.id === action.payload.id) {
+                    return action.payload
+                }
+                return item
+            });
             return {
-
+                ...state,
+                items
             };
         case MOUTH_CLICK:
             return {

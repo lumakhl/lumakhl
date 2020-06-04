@@ -13,7 +13,7 @@ import {
     MOUTH_CLICK
 } from '../types';
 
-const increasePriceFactor = 10 / 100;
+const increasePriceFactor = 50 / 100;
 
 const ToothState = props => {
     const initialState = {
@@ -47,7 +47,8 @@ const ToothState = props => {
 
     const buyItem = item => {
         item.quantity= (++item.quantity);
-        item.price = (item.price + (item.price * increasePriceFactor));
+        item.oldPrice = item.price;
+        item.price = Math.floor(item.price + (item.price * increasePriceFactor));
         
         dispatch({
             type: BUY_ITEM,

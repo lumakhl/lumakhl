@@ -22,10 +22,15 @@ export default (state, action) => {
                 }
                 return item
             });
+
+            const currentTotal = state.score.currentTotal - action.payload.oldPrice;
+
             return {
                 ...state,
-                items
+                score: { ...state.score, currentTotal },
+                items,
             };
+
         case MOUTH_CLICK:
             state.score.currentTotal = action.payload;
             return {

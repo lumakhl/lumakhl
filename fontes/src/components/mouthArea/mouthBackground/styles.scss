@@ -1,0 +1,46 @@
+$childCount: 4;
+$scaleSize: 1.02;
+
+$animationConfig: 5s linear infinite;
+.mouth-view-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    & > img {
+        position: absolute;
+        content: url('../../../assets/back-dente.jpg');
+        height: auto;
+        width: 100%;
+        @for $i from 1 through $childCount {
+            &:nth-child(#{$i}) {
+                animation: mouth-background-#{$i} $animationConfig;
+            }
+        }
+        
+    }
+}
+
+@for $i from 1 through $childCount {
+    @keyframes mouth-background-#{$i} {
+        $position: $i - $childCount + 1;
+        0% { 
+            transform: translateY(($position * 100%) + 0%) scale(1.00);
+        }
+        25% {
+            transform: translateY(($position * 100%) + 25%) scale($scaleSize);
+        }
+        50% {
+            transform: translateY(($position * 100%) + 50%) scale(1.00);
+        }
+        75% {
+            transform: translateY(($position * 100%) + 75%) scale($scaleSize);
+        }
+        100% { 
+            transform: translateY(($position * 100%) + 100%) scale(1.00);
+        }
+    }
+}

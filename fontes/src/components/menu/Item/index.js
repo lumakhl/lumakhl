@@ -12,7 +12,7 @@ const Item = ({ item })  => {
     const { name, image, price, quantity } = item;
 
     return (
-        <Tile action={() => toothContext.buyItem(item)}>
+        <Tile action={() => toothContext.buyItem(item)} customClass={"menu-item"}>
             <Asset className="item-image" path={image}></Asset>
 
             <div className="item-content">

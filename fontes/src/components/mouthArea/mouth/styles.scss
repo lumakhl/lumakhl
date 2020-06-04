@@ -3,6 +3,10 @@
   height: 50%;
   width: 100%;
   cursor: url(~assets/teeth-brushing_cursor.png), pointer;
+  &:active {
+    transform: scale(1.015);
+    transition: transform linear .05s;
+  }
 }
 
 .mouth-wrapper {

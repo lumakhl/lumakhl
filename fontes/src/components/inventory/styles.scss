@@ -5,8 +5,13 @@
     background-color: $themeColor2;
     align-content: center;
     text-align: center;
+    padding: 10px 0;
+    border-width: 0px 2px 0px 2px;
+    border-style: solid;
+    border-color: $themeColor3;
+    box-shadow: inset 0px 1px 17px -7px rgba(0, 0, 0, 0.75);
 }
 
 .inventory-item-wrapper {
-    padding: 10px 20px;
+    padding: 0 20px;
 }

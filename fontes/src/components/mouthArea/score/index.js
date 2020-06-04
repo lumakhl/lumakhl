@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ToothContext from  '../../../context/tooth/toothContext';
 
 import './styles.scss';
 
-export default class Score extends React.Component {
+const Score = () => {
 
-  constructor(props) {
-    super(props);
-  }
+  const toothContext = useContext(ToothContext);
 
-  render() {
+  const { score } = toothContext;
     return (
       <div className="score-container">
-        <h2>Dentes por segundo:</h2>
-        <h4>Total de dentes:</h4>
+        <h2>Dentes por segundo:{score.clickPerSecond}</h2>
+        <h4>Total de dentes:{score.currentTotal}</h4>
       </div>
     );
-  }
-
 }
+
+export default Score;

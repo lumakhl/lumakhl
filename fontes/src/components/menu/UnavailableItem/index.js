@@ -11,7 +11,7 @@ export default function UnavailableItem({ image, price }) {
 
             <div className="item-content">
                 <p className="item-title">?????</p>
-                <span className="unavailable-item-price">R$ {price}</span>
+                <span className="unavailable-item-price">{price}</span>
             </div>
         </Tile>
     );

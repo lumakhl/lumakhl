@@ -1,1 +1,4 @@
 ## 28/05/2020
+Luma - Componente de gerenciamento de estados.
+Alex - Ajustes no layout e componentes visuais.
+Adriner - Animações e design do front.

@@ -1,1 +1,4 @@
 ## 04/06/2020
+Luma - Componente de gerenciamento de estados.
+Alex - Lógica para computar a pontuação com base nos itens.
+Adriner - Adicionando som ao jogo e a tela inicial.

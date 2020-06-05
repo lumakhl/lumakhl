@@ -57,10 +57,9 @@ const ToothState = props => {
     };
 
     const mouthClick = increment => {
-        const incremented = state.score.currentTotal+increment; 
         dispatch({
             type: MOUTH_CLICK,
-            payload: incremented
+            payload: increment
         })
 
     };

@@ -32,7 +32,8 @@ export default (state, action) => {
             };
 
         case MOUTH_CLICK:
-            state.score.currentTotal = action.payload;
+            state.score.currentTotal += action.payload;
+            state.score.total += action.payload;
             return {
                 ...state
             };

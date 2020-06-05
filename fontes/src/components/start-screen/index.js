@@ -10,7 +10,10 @@ export default class StartScreen extends React.Component {
         <button 
           className="start-button" 
           onClick={() => this.props.onStart()}>
-            Iniciar
+            <div className="content-wrapper">
+              <span className="game-title">Tooth Clicker</span>
+              <span className="click-to-start">Clique para iniciar</span>
+            </div>
           </button>
       </div>
     );

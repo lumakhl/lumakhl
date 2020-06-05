@@ -1,15 +1,85 @@
 .start-screen-container {
   width: 100vw;
   height: 100vh;
-  background-image: url('../../assets/start-screen-background.jpeg');
+  background-image: url('../../assets/start-screen-background.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #bee0df;
+  position: relative;
+}
+
+$animationConfig: .8s cubic-bezier(.55,2,.78,1.32);
+.game-title {
+  font-size: 2em;
+  animation: game-title-appears $animationConfig;
+  background-color: white;
+  padding: 25px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.click-to-start {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  animation: start-button-appears $animationConfig;
+  margin-top: 30px;
 }
 
 .start-button {
-  width: 10%;
-  height: 10%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   font-size: 2em;
   cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color .2s ease-in-out;
+  & span {
+    display: none;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.089);
+    & span {
+      display: block;
+    }
+  }
+}
+
+@keyframes game-title-appears {
+  0% {
+    transform: scale(.2);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes start-button-appears {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

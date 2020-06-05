@@ -4,7 +4,7 @@ const audios = [{
   name: 'background_music',
   path: 'bensound-ukulele.mp3',
   loop: true,
-  volume: 0.25
+  volume: 0.2
 }]
 
 export default class Audio extends React.Component {
@@ -32,7 +32,9 @@ export default class Audio extends React.Component {
     audios.filter(({ loop }) => loop)
       .map((audio) => {
         const audioEl = document.getElementById(this.formatAudioId(audio.name));
-        audioEl.volume = audio.volume || 1;
+        if (audio.volume) {
+          this.fadeIn(audioEl, audio.volume);
+        }
         return audioEl;
       })
       .forEach(audioEl => {
@@ -42,6 +44,29 @@ export default class Audio extends React.Component {
 
   formatAudioId(name) {
     return `audio_${name}`;
+  }
+
+  fadeIn(audioEl, volume) {
+    const fadeInTimeMs = 10000;
+    const fadeInParticles = 1000;
+    const fadeInProgressionTime = fadeInTimeMs / fadeInParticles;
+    const audioParticle = volume / fadeInParticles;
+
+    audioEl.volume = 0;
+    const intervalId = setInterval(() => {
+      if (audioEl.volume < 1) {
+        let newVolume = audioEl.volume + audioParticle;
+        if (newVolume >= volume) {
+          newVolume = volume;
+          clearInterval(intervalId);
+        } else if (newVolume >= 1) {
+          // Trava pra impedir que estoure os nossos timpanos caso alguém altere a configuração
+          newVolume = 1;
+          clearInterval(intervalId);
+        }
+        audioEl.volume = newVolume;
+      }
+    }, fadeInProgressionTime);
   }
 
 }

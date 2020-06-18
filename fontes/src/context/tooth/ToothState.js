@@ -19,6 +19,7 @@ const ToothState = props => {
     const initialState = {
         items: ToothItems,
         score: {
+            totalClicks: 0,
             clickPerSecond: 0,
             total: 0,
             currentTotal: 0
@@ -59,7 +60,9 @@ const ToothState = props => {
     const mouthClick = increment => {
         const incremented = state.score.currentTotal+increment; 
         const total = state.score.total+increment; 
+        const totalClicks = state.score.totalClicks+increment; 
         const score = {
+            totalClicks,
             incremented,
             total
         }

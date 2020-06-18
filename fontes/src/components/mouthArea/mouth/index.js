@@ -10,7 +10,7 @@ const Mouth = () => {
   const toothContext = useContext(ToothContext);
 
   const { score } = toothContext;
-  const [toothbrushLeft, toothbrushTop] = toothbrushPositions[score.currentTotal % toothbrushPositions.length];
+  const [toothbrushLeft, toothbrushTop] = toothbrushPositions[score.totalClicks % toothbrushPositions.length];
 
   const toothbrushing = () => {
     toothContext.mouthClick(1);

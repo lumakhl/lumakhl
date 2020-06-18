@@ -1,3 +1,8 @@
+.unavailable-item {
+    -webkit-filter: grayscale(20%) brightness(70%);
+    filter: grayscale(20%) brightness(70%);
+}
+
 .unavailable-item-price {
     font-size: 1.2vw;
     color: rgb(238, 0, 52);

@@ -5,6 +5,11 @@
     }
 }
 
+.menu-item.too-expensive {    
+    -webkit-filter: grayscale(20%) brightness(70%);
+    filter: grayscale(20%) brightness(70%);
+}
+
 .item-image {
     width: 90px;
     height: 100%;
@@ -25,6 +30,10 @@
 .item-price {
     font-size: 1.2vw;
     color: #92ff92;
+}
+
+.item-price.too-expensive {
+    color: #ff0000;
 }
 
 .item-quantity {

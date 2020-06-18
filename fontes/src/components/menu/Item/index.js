@@ -14,17 +14,21 @@ const Item = ({ item }) => {
 
     const itemClick = () => {
         if (price <= score.currentTotal) {
-            toothContext.buyItem(item)
+            toothContext.buyItem(item);
         }
     }
 
+    function tooExpensive() {
+        return score.currentTotal < price;
+    }
+
     return (
-        <Tile action={itemClick} customClass={"menu-item"}>
+        <Tile action={itemClick} customClass={"menu-item" + (tooExpensive() ? " too-expensive" : "")}>
             <Asset className="item-image" path={image}></Asset>
 
             <div className="item-content">
                 <p className="item-title">{name}</p>
-                <span className="item-price">{price.toFixed(0)}</span>
+                <span className={"item-price" + (tooExpensive() ? " too-expensive" : "")}>{price.toFixed(0)}</span>
             </div>
 
             <div className="item-quantity">

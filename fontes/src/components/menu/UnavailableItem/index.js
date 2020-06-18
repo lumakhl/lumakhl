@@ -6,7 +6,7 @@ import Tile from 'commons/Tile';
 
 export default function UnavailableItem({ image, price }) {
     return (
-        <Tile action={() => {}}>
+        <Tile action={() => {}} customClass={"unavailable-item"}>
             <Asset className="unavailable-item-image" path={image}></Asset>
 
             <div className="item-content">

@@ -4,18 +4,20 @@ import ToothReducer from './toothReducer';
 
 import ToothItems from './toothItems';
 
-import {saveStateLocalStorage, getStateFromLocalStorage} from '../../services/service';
+import { saveStateLocalStorage, getStateFromLocalStorage } from '../../services/service';
 
 import {
     GET_STATE,
     SAVE_STATE,
     BUY_ITEM,
-    MOUTH_CLICK
+    MOUTH_CLICK,
+    ADDED_DIRT
 } from '../types';
 
 const increasePriceFactor = 50 / 100;
 
 const ToothState = props => {
+
     const initialState = {
         items: ToothItems,
         score: {
@@ -24,11 +26,12 @@ const ToothState = props => {
             total: 0,
             currentTotal: 0
         },
+        dirties: [],
         lastSaveTime: null
     };
 
     const [state, dispatch] = useReducer(ToothReducer, initialState);
-
+    
     const saveState = (data) => {
         saveStateLocalStorage(data);
         
@@ -73,14 +76,24 @@ const ToothState = props => {
 
     };
 
-    return (<ToothContext.Provider
+    const setDirties = dirties => {
+        dispatch({
+            type: ADDED_DIRT,
+            payload: dirties
+        });
+    }
+
+    return (
+    <ToothContext.Provider
         value={{
             items: state.items,
             score: state.score,
+            dirties: state.dirties,
             lastSaveTime: state.lastSaveTime,
             saveState,
             getState,
             buyItem,
+            setDirties,
             mouthClick
         }}
     >

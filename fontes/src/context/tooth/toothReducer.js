@@ -2,7 +2,8 @@ import {
     SAVE_STATE,
     BUY_ITEM,
     MOUTH_CLICK,
-    GET_STATE
+    GET_STATE,
+    ADDED_DIRT
 } from '../types';
 
 export default (state, action) => {
@@ -38,5 +39,12 @@ export default (state, action) => {
             return {
                 ...state
             };
+        case ADDED_DIRT:
+            return { 
+                ...state,
+                dirties: action.payload
+            };
+        default:
+            throw Error(`Unknown type: ${action.type}`);
     }
 }

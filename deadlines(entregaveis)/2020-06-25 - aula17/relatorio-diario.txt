@@ -1,1 +1,4 @@
 ## 25/06/2020
+Luma - Auxílio na lógica da sujeira e lógica de pontuação.
+Alex - Tooltip para exibir detalhes dos itens.
+Adriner - Implementando lógica de sujeira dos dentes.

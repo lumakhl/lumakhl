@@ -1,1 +1,4 @@
 ## 18/06/2020
+Luma - Controle de lógica de compra de itens.
+Alex - Correção de bugs.
+Adriner - Ajustando escovação e iniciando lógica de sujeira.

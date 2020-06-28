@@ -2,12 +2,13 @@ import React, { useContext, useEffect } from 'react';
 import ToothContext from '../../../context/tooth/toothContext';
 
 import Asset from 'commons/Asset';
-import { toothbrushPositions } from './toothbrush-movement';
+import { toothbrushPositions } from 'context/tooth/toothbrush-movement';
 
 import './styles.scss';
 
 import DirtiesController from 'context/tooth/dirtiesController';
 import { DirtEvents } from 'context/tooth/dirtEvents';
+import { DirtTypes } from 'context/tooth/dirtTypes';
 
 const dirtiesController = new DirtiesController();
 
@@ -18,6 +19,9 @@ const Mouth = () => {
     dirtiesController.on(DirtEvents.ADDED_DIRT, () => {
       toothContext.setDirties(dirtiesController.getDirties());
     });
+    dirtiesController.on(DirtEvents.REMOVED_DIRT, () => {
+      toothContext.setDirties(dirtiesController.getDirties());
+    })
     dirtiesController.start();
   }, []);
 
@@ -26,6 +30,7 @@ const Mouth = () => {
 
   const toothbrushing = () => {
     toothContext.mouthClick(1);
+    dirtiesController.removeDirt([[toothbrushLeft, toothbrushTop]]);
   }
 
   return (
@@ -37,7 +42,8 @@ const Mouth = () => {
       </div>
       
       {dirties.map(dirt => {
-          const [[id_dirt_x, id_dirt_y], [dirt_x, dirt_y]] = dirt;
+          const [[id_dirt_x, id_dirt_y], [dirt_x, dirt_y], type, props] = dirt;
+          const { style } = props;
           return (
             <div className="dirty-wrapper"
               key={`${id_dirt_x}_${id_dirt_y}`}
@@ -46,8 +52,8 @@ const Mouth = () => {
                 top: `${dirt_y}%`
               }}>
               <Asset
-                className="dirt"
-                path="dirt.png"
+                className={`dirt-${style}`}
+                path={type === DirtTypes.TOOTH ? 'tooth_dirt.png' : 'mouth_dirt.png'}
               ></Asset>
             </div>
           )

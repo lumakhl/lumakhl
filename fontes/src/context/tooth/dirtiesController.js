@@ -2,7 +2,7 @@ import { provideDirt } from './dirtiesPlacement';
 import { isEqual } from './dirtUtils';
 import { DirtEvents } from './dirtEvents';
 
-const DIRTY_INTERVAL = 1000;
+const DIRTY_INTERVAL = 5000;
 
 class DirtiesController {
 
@@ -17,8 +17,7 @@ class DirtiesController {
   start() {
     if (!this.dirtiesInterval) {
       this.dirtiesInterval = setInterval(() => {
-        const newDirt = this.addDirt();
-        this.listeners[DirtEvents.ADDED_DIRT].forEach(listener => listener(newDirt));
+        this.addDirt();
       }, DIRTY_INTERVAL);
     }
   }
@@ -33,13 +32,20 @@ class DirtiesController {
 
   addDirt() {
     const newDirt = provideDirt(this.dirties);
-    this.dirties.push(newDirt);
+    if (newDirt) {
+      this.dirties.push(newDirt);
+      this.listeners[DirtEvents.ADDED_DIRT].forEach(listener => listener(newDirt)); 
+    }
     return newDirt;
   }
 
   removeDirt(toRemove) {
+    const beforeRemoved = this.dirties.length;
     this.dirties = this.dirties.filter(dirt => !isEqual(dirt, toRemove));
-    this.listeners[DirtEvents.REMOVED_DIRT].forEach(listener => listener());
+    const afterRemoved = this.dirties.length;
+    if (beforeRemoved !== afterRemoved) {
+      this.listeners[DirtEvents.REMOVED_DIRT].forEach(listener => listener());
+    }
   }
 
   stop() {

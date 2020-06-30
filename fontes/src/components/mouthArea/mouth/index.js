@@ -16,6 +16,7 @@ const Mouth = () => {
   const toothContext = useContext(ToothContext);
 
   useEffect(() => {
+    toothContext.getState();
     dirtiesController.on(DirtEvents.ADDED_DIRT, () => {
       toothContext.setDirties(dirtiesController.getDirties());
     });
@@ -23,6 +24,7 @@ const Mouth = () => {
       toothContext.setDirties(dirtiesController.getDirties());
     })
     dirtiesController.start();
+    setInterval(() => {toothContext.saveState()}, 30000);
   }, []);
 
   const { score, dirties } = toothContext;

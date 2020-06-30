@@ -6,6 +6,7 @@ const items = [
         price: 5,
         quantity: 0,
         minTotalToAvaible: 0,
+        pointsToIncrement: 1,
         available: true,
         visible: true
     },
@@ -16,6 +17,7 @@ const items = [
         price: 15,
         quantity: 0,
         minTotalToAvaible: 0,
+        pointsToIncrement: 2,
         available: true,
         visible: true
     },
@@ -26,6 +28,7 @@ const items = [
         price: 49,
         quantity: 0,
         minTotalToAvaible: 0,
+        pointsToIncrement: 4,
         available: false,
         visible: true
     },
@@ -36,6 +39,7 @@ const items = [
         price: 249,
         quantity: 0,
         minTotalToAvaible: 0,
+        pointsToIncrement: 6,
         available: false,
         visible: false
     }

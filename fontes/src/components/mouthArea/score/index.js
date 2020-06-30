@@ -10,7 +10,8 @@ const Score = () => {
   const { score } = toothContext;
     return (
       <div className="score-container">
-        <h2>{score.currentTotal} limpezinhas</h2>
+        <h2>{score.currentTotal}</h2>
+        <h2>limpezinhas</h2>
         <h4>limpezinhas por segundo - {score.clickPerSecond}</h4>
       </div>
     );

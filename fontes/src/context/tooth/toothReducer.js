@@ -5,16 +5,19 @@ import {
     GET_STATE,
     ADDED_DIRT
 } from '../types';
+import { saveStateLocalStorage } from '../../services/service';
 
 export default (state, action) => {
     switch (action.type) {
         case GET_STATE:
             return {
-
+                ...action.payload,
+                dirties: []
             };
         case SAVE_STATE:
+            saveStateLocalStorage(state)
             return {
-
+                ...state
             };
         case BUY_ITEM:
             const items = state.items.map((item) => {

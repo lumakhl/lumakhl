@@ -32,8 +32,7 @@ const ToothState = props => {
 
     const [state, dispatch] = useReducer(ToothReducer, initialState);
     
-    const saveState = (data) => {
-        saveStateLocalStorage(data);
+    const saveState = _ => {
         
         dispatch({
             type: SAVE_STATE,

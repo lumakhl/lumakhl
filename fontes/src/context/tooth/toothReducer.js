@@ -3,7 +3,8 @@ import {
     BUY_ITEM,
     MOUTH_CLICK,
     GET_STATE,
-    ADDED_DIRT
+    ADDED_DIRT,
+    AUTO_MOUTH_CLICK
 } from '../types';
 import { saveStateLocalStorage } from '../../services/service';
 
@@ -26,12 +27,12 @@ export default (state, action) => {
                 }
                 return item
             });
-
             const currentTotal = state.score.currentTotal - action.payload.oldPrice;
+            const clickPerSecond = state.score.clickPerSecond + action.payload.pointsToIncrement;
 
             return {
                 ...state,
-                score: { ...state.score, currentTotal },
+                score: { ...state.score, currentTotal, clickPerSecond},
                 items,
             };
 
@@ -43,10 +44,18 @@ export default (state, action) => {
                 ...state
             };
         case ADDED_DIRT:
-            return { 
+            return {
                 ...state,
                 dirties: action.payload
             };
+        case AUTO_MOUTH_CLICK:
+            const idealValue = state.score.clickPerSecond/2;
+            state.score.currentTotal += idealValue;
+            state.score.total += idealValue;
+            state.score.totalClicks += idealValue;
+            return {
+                ...state
+            }
         default:
             throw Error(`Unknown type: ${action.type}`);
     }

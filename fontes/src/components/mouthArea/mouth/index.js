@@ -25,6 +25,7 @@ const Mouth = () => {
     })
     dirtiesController.start();
     setInterval(() => {toothContext.saveState()}, 30000);
+    setInterval(toothContext.autoClick.bind(this), 1000);
   }, []);
 
   const { score, dirties } = toothContext;

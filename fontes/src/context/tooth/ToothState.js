@@ -4,14 +4,15 @@ import ToothReducer from './toothReducer';
 
 import ToothItems from './toothItems';
 
-import { saveStateLocalStorage, getStateFromLocalStorage } from '../../services/service';
+import { getStateFromLocalStorage } from '../../services/service';
 
 import {
     GET_STATE,
     SAVE_STATE,
     BUY_ITEM,
     MOUTH_CLICK,
-    ADDED_DIRT
+    ADDED_DIRT,
+    AUTO_MOUTH_CLICK
 } from '../types';
 
 const increasePriceFactor = 50 / 100;
@@ -33,7 +34,6 @@ const ToothState = props => {
     const [state, dispatch] = useReducer(ToothReducer, initialState);
     
     const saveState = _ => {
-        
         dispatch({
             type: SAVE_STATE,
             payload: new Date()
@@ -42,10 +42,13 @@ const ToothState = props => {
 
     const getState = () => {
         const data = getStateFromLocalStorage();
-        dispatch({
-            type: GET_STATE,
-            payload: data
-        });
+
+        if (data) {
+            dispatch({
+                type: GET_STATE,
+                payload: data
+            });
+        } 
     };
 
     const buyItem = item => {
@@ -56,7 +59,7 @@ const ToothState = props => {
         dispatch({
             type: BUY_ITEM,
             payload: item
-        })
+        });
     };
 
     const mouthClick = increment => {
@@ -67,12 +70,17 @@ const ToothState = props => {
             totalClicks,
             incremented,
             total
-        }
+        };
         dispatch({
             type: MOUTH_CLICK,
             payload: score
-        })
+        });
+    };
 
+    const autoClick = _ => {
+        dispatch({
+            type: AUTO_MOUTH_CLICK,
+        });
     };
 
     const setDirties = dirties => {
@@ -93,7 +101,8 @@ const ToothState = props => {
             getState,
             buyItem,
             setDirties,
-            mouthClick
+            mouthClick,
+            autoClick
         }}
     >
         {props.children}

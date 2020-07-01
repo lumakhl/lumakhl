@@ -32,7 +32,7 @@ export default (state, action) => {
 
             return {
                 ...state,
-                score: { ...state.score, currentTotal, clickPerSecond},
+                score: { ...state.score, currentTotal, clickPerSecond },
                 items,
             };
 
@@ -40,8 +40,21 @@ export default (state, action) => {
             state.score.currentTotal = action.payload.incremented;
             state.score.total = action.payload.total;
             state.score.totalClicks = action.payload.totalClicks;
+
+            const newItems = state.items.map((item) => {
+                if ((item.minTotalToAvaible / 2) <= state.score.total) {
+                    item.visible = true;
+                }
+                if (item.minTotalToAvaible <= state.score.total) {
+                    item.available = true;
+                }
+
+                return item;
+            });
+
             return {
-                ...state
+                ...state,
+                items: newItems
             };
         case ADDED_DIRT:
             return {
@@ -49,12 +62,24 @@ export default (state, action) => {
                 dirties: action.payload
             };
         case AUTO_MOUTH_CLICK:
-            const idealValue = state.score.clickPerSecond/2;
+            const idealValue = state.score.clickPerSecond / 2;
             state.score.currentTotal += idealValue;
             state.score.total += idealValue;
             state.score.totalClicks += idealValue;
+
+            const itemsAuto = state.items.map((item) => {
+                if ((item.minTotalToAvaible / 2) <= state.score.total) {
+                    item.visible = true;
+                }
+                if (item.minTotalToAvaible <= state.score.total) {
+                    item.available = true;
+                }
+
+                return item;
+            });
             return {
-                ...state
+                ...state,
+                items: itemsAuto
             }
         default:
             throw Error(`Unknown type: ${action.type}`);

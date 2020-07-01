@@ -5,9 +5,9 @@ const items = [
         image: "toothbrush.png",
         price: 5,
         quantity: 0,
-        minTotalToAvaible: 0,
+        minTotalToAvaible: 100,
         pointsToIncrement: 1,
-        available: true,
+        available: false,
         visible: true
     },
     {
@@ -16,10 +16,10 @@ const items = [
         image: "mouthwash.png",
         price: 15,
         quantity: 0,
-        minTotalToAvaible: 0,
+        minTotalToAvaible: 300,
         pointsToIncrement: 2,
-        available: true,
-        visible: true
+        available: false,
+        visible: false
     },
     {
         id: 2,
@@ -27,10 +27,10 @@ const items = [
         image: "electric-toothbrush.png",
         price: 49,
         quantity: 0,
-        minTotalToAvaible: 0,
+        minTotalToAvaible: 1000,
         pointsToIncrement: 4,
         available: false,
-        visible: true
+        visible: false
     },
     {
         id: 3,
@@ -38,7 +38,7 @@ const items = [
         image: "toothpaste.png",
         price: 249,
         quantity: 0,
-        minTotalToAvaible: 0,
+        minTotalToAvaible: 5000,
         pointsToIncrement: 6,
         available: false,
         visible: false

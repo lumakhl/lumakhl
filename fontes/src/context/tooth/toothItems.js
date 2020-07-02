@@ -2,6 +2,7 @@ const items = [
     {
         id: 0,
         name: "Escova",
+        description: "É importante sempre escovar os dentes após cada refeição.",
         image: "toothbrush.png",
         price: 5,
         quantity: 0,
@@ -13,6 +14,7 @@ const items = [
     {
         id: 1,
         name: "Enxaguante",
+        description: "Uso eficaz contra bactérias que causam o mau hálito.",
         image: "mouthwash.png",
         price: 15,
         quantity: 0,
@@ -24,6 +26,7 @@ const items = [
     {
         id: 2,
         name: "Escova Elétrica",
+        description: "Limpa os dentes com até 500% mais eficiência que escovas normais.",
         image: "electric-toothbrush.png",
         price: 49,
         quantity: 0,
@@ -35,6 +38,7 @@ const items = [
     {
         id: 3,
         name: "Pasta de dente",
+        description: "Essencial para garantir a limpeza eficaz dos dentes.",
         image: "toothpaste.png",
         price: 249,
         quantity: 0,

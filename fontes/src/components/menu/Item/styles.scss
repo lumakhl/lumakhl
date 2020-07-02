@@ -1,3 +1,5 @@
+@import '~variables';
+
 .menu-item {
     transition: transform .1 ease-in-out;
     &:hover {
@@ -39,4 +41,24 @@
 .item-quantity {
     font-size: xx-large;
     color: #a9a9a9;
+}
+
+.item-tooltip {
+    background-color: #4c303e;
+    color: #fff;
+    font-family: 'Segoe UI';
+    align-content: center;
+    border: solid 5px $themeColor1_Border;
+    width: 22.3vw;
+    padding: 10px;
+    font-size: 0.8vw;
+}
+
+.item-tooltip b {
+    font-family: 'Segoe UI';
+}
+
+.item-tooltip span {
+    font-family: 'Segoe UI';
+    color: #92ff92
 }

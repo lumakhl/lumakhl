@@ -40,7 +40,7 @@ const items = [
     },
     {
         id: 3,
-        name: "Pasta de dente",
+        name: "Creme dental",
         description: "Essencial para garantir a limpeza eficaz dos dentes.",
         image: "toothpaste.png",
         price: 10000,
@@ -53,6 +53,7 @@ const items = [
     }, {
         id: 4,
         name: "Maçã",
+        description: "Ajuda na limpeza dos dentes e a evitar a formação de cáries.",
         image: "apple.png",
         price: 20000,
         quantity: 0,
@@ -64,6 +65,7 @@ const items = [
     }, {
         id: 5,
         name: "Melancia",
+        description: "Ajuda na limpeza dos dentes e a evitar a formação de cáries.",
         image: "watermelon.png",
         price: 50000,
         quantity: 0,
@@ -75,6 +77,7 @@ const items = [
     }, {
         id: 6,
         name: "Cenoura",
+        description: "Ajuda na limpeza dos dentes e a evitar a formação de cáries.",
         image: "carrot.png",
         price: 250000,
         quantity: 0,
@@ -86,6 +89,7 @@ const items = [
     }, {
         id: 7,
         name: "Fio dental",
+        description: "Auxilia na prevenção contra problemas na gengiva, cárie e mau hálito.",
         image: "dental-floss.png",
         price: 1000000,
         quantity: 0,
@@ -96,7 +100,8 @@ const items = [
         visible: false
     }, {
         id: 8,
-        name: "Fluor",
+        name: "Flúor em gel",
+        description: "Ajuda na prevenção de cáries.",
         image: "fluorine.png",
         price: 10000000,
         quantity: 0,
@@ -108,6 +113,7 @@ const items = [
     }, {
         id: 9,
         name: "Aparelho dental",
+        description: "Mantém seus dentes retos e alinhados.",
         image: "brace.png",
         price: 100000000,
         quantity: 0,

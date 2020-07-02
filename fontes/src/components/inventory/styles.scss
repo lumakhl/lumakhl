@@ -10,6 +10,7 @@
     border-style: solid;
     border-color: $themeColor3;
     box-shadow: inset 0px 1px 17px -7px rgba(0, 0, 0, 0.75);
+    overflow-y: auto;
 }
 
 .inventory-item-wrapper {

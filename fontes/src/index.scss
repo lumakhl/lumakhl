@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import '~variables';
 
 * {
   margin: 0;
@@ -16,6 +17,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* width */
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $themeColor5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $themeColor7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $themeColor7_Hover;
 }
 
 .container {

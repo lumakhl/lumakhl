@@ -48,7 +48,7 @@ const items = [
         visible: false
     }, {
         id: 4,
-        name: "Maça",
+        name: "Maçã",
         image: "apple.png",
         price: 20000,
         quantity: 0,

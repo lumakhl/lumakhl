@@ -63,7 +63,7 @@ export default (state, action) => {
                 dirties: action.payload
             };
         case AUTO_MOUTH_CLICK:
-            const idealValue = state.score.clickPerSecond / 2;
+            const idealValue = state.score.clickPerSecond;
             state.score.currentTotal += idealValue;
             state.score.total += idealValue;
 

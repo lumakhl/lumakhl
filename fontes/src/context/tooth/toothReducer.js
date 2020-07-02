@@ -43,10 +43,10 @@ export default (state, action) => {
             state.score.totalClicks = action.payload.totalClicks;
 
             const newItems = state.items.map((item) => {
-                if ((item.minTotalToAvaible / 2) <= state.score.total) {
+                if (item.minTotalToVisible <= state.score.currentTotal) {
                     item.visible = true;
                 }
-                if (item.minTotalToAvaible <= state.score.total) {
+                if (item.minTotalToAvaible <= state.score.currentTotal) {
                     item.available = true;
                 }
 
@@ -68,10 +68,10 @@ export default (state, action) => {
             state.score.total += idealValue;
 
             const itemsAuto = state.items.map((item) => {
-                if ((item.minTotalToAvaible / 2) <= state.score.total) {
+                if (item.minTotalToVisible <= state.score.currentTotal) {
                     item.visible = true;
                 }
-                if (item.minTotalToAvaible <= state.score.total) {
+                if (item.minTotalToAvaible <= state.score.currentTotal) {
                     item.available = true;
                 }
 

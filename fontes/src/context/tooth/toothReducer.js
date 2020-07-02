@@ -64,14 +64,17 @@ export default (state, action) => {
             };
         case AUTO_MOUTH_CLICK:
             const idealValue = state.score.clickPerSecond;
-            state.score.currentTotal += idealValue;
-            state.score.total += idealValue;
+            const newScoreAutoClick = { 
+                ...state.score,
+                currentTotal: state.score.currentTotal + idealValue,
+                total: state.score.total + idealValue,
+            }
 
             const itemsAuto = state.items.map((item) => {
-                if (item.minTotalToVisible <= state.score.currentTotal) {
+                if (item.minTotalToVisible <= newScoreAutoClick.currentTotal) {
                     item.visible = true;
                 }
-                if (item.minTotalToAvaible <= state.score.currentTotal) {
+                if (item.minTotalToAvaible <= newScoreAutoClick.currentTotal) {
                     item.available = true;
                 }
 
@@ -79,16 +82,17 @@ export default (state, action) => {
             });
             return {
                 ...state,
+                score: newScoreAutoClick,
                 items: itemsAuto
             }
         case AUTO_BRUSH:
-            const newScore = { 
+            const newScoreAutoBrush = { 
                 ...state.score,
                 totalClicks: state.score.totalClicks + (state.score.clickPerSecond > 0 ? 1 : 0)
             }
             return {
                 ...state,
-                score: newScore
+                score: newScoreAutoBrush
             }
         default:
             throw Error(`Unknown type: ${action.type}`);

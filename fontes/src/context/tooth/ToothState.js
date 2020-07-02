@@ -12,7 +12,8 @@ import {
     BUY_ITEM,
     MOUTH_CLICK,
     ADDED_DIRT,
-    AUTO_MOUTH_CLICK
+    AUTO_MOUTH_CLICK,
+    AUTO_BRUSH
 } from '../types';
 
 const increasePriceFactor = 50 / 100;
@@ -83,6 +84,12 @@ const ToothState = props => {
         });
     };
 
+    const autoBrush = _ => {
+        dispatch({
+            type: AUTO_BRUSH,
+        });
+    };
+
     const setDirties = dirties => {
         dispatch({
             type: ADDED_DIRT,
@@ -102,7 +109,8 @@ const ToothState = props => {
             buyItem,
             setDirties,
             mouthClick,
-            autoClick
+            autoClick,
+            autoBrush
         }}
     >
         {props.children}

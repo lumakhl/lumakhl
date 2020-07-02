@@ -15,6 +15,9 @@ const dirtiesController = new DirtiesController();
 const Mouth = () => {
   const toothContext = useContext(ToothContext);
 
+  const { score, dirties } = toothContext;
+  const [toothbrushLeft, toothbrushTop] = toothbrushPositions[score.totalClicks % toothbrushPositions.length];
+
   useEffect(() => {
     toothContext.getState();
     dirtiesController.on(DirtEvents.ADDED_DIRT, () => {
@@ -26,15 +29,14 @@ const Mouth = () => {
     dirtiesController.start();
     setInterval(() => {toothContext.saveState()}, 30000);
     setInterval(toothContext.autoClick.bind(this), 1000);
+    setInterval(() => toothContext.autoBrush(), 2000);
   }, []);
-
-  const { score, dirties } = toothContext;
-  const [toothbrushLeft, toothbrushTop] = toothbrushPositions[score.totalClicks % toothbrushPositions.length];
 
   const toothbrushing = () => {
     toothContext.mouthClick(1);
-    dirtiesController.removeDirt([[toothbrushLeft, toothbrushTop]]);
   }
+
+  dirtiesController.removeDirt([[toothbrushLeft, toothbrushTop]])
 
   return (
     <div

@@ -4,7 +4,8 @@ import {
     MOUTH_CLICK,
     GET_STATE,
     ADDED_DIRT,
-    AUTO_MOUTH_CLICK
+    AUTO_MOUTH_CLICK,
+    AUTO_BRUSH
 } from '../types';
 import { saveStateLocalStorage } from '../../services/service';
 
@@ -65,7 +66,6 @@ export default (state, action) => {
             const idealValue = state.score.clickPerSecond / 2;
             state.score.currentTotal += idealValue;
             state.score.total += idealValue;
-            state.score.totalClicks += idealValue;
 
             const itemsAuto = state.items.map((item) => {
                 if ((item.minTotalToAvaible / 2) <= state.score.total) {
@@ -80,6 +80,15 @@ export default (state, action) => {
             return {
                 ...state,
                 items: itemsAuto
+            }
+        case AUTO_BRUSH:
+            const newScore = { 
+                ...state.score,
+                totalClicks: state.score.totalClicks + (state.score.clickPerSecond > 0 ? 1 : 0)
+            }
+            return {
+                ...state,
+                score: newScore
             }
         default:
             throw Error(`Unknown type: ${action.type}`);

@@ -5,3 +5,4 @@ export const MOUTH_CLICK = "MOUTH_CLICK";
 export const AUTO_MOUTH_CLICK = "AUTO_MOUTH_CLICK";
 export const ADDED_DIRT = "ADDED_DIRT";
 export const REMOVED_DIRT = "REMOVED_DIRT";
+export const AUTO_BRUSH = "AUTO_BRUSH";

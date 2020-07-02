@@ -64,11 +64,16 @@ export default (state, action) => {
             };
         case AUTO_MOUTH_CLICK:
             const idealValue = state.score.clickPerSecond;
+<<<<<<< HEAD
             const newScoreAutoClick = { 
                 ...state.score,
                 currentTotal: state.score.currentTotal + idealValue,
                 total: state.score.total + idealValue,
             }
+=======
+            state.score.currentTotal += idealValue;
+            state.score.total += idealValue;
+>>>>>>> 3338dae00663bda066bc201705d695edc4b98232
 
             const itemsAuto = state.items.map((item) => {
                 if (item.minTotalToVisible <= newScoreAutoClick.currentTotal) {
